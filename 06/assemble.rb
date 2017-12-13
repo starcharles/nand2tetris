@@ -14,7 +14,6 @@ while parser.hasMoreCommand?
   command = parser.advance
   p command
   p parser.commandType
-  # binding.pry
   if parser.commandType == 'C_COMMAND'
     bin = HackASM::Code.to_binary(parser)
     p bin
@@ -28,7 +27,6 @@ end
 
 begin
   File.open(output, 'w') do |file|
-    # binding.pry
     while code = bincodes.shift
       file.puts(code)
     end

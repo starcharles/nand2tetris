@@ -3,8 +3,10 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 
 require "pry-byebug"
 
-# file= 'Add'
-file= 'MaxL'
+file= 'Add'
+# file= 'MaxL'
+# file= 'Max'
+# file= 'Pong'
 
 target = "./#{file}.hack"
 src = './Prog.hack'
@@ -32,8 +34,8 @@ rescue => e
   puts e.message
 end
 
-while comp = target_arr.pop
-  src = src_arr.pop
+while comp = target_arr.shift
+  src = src_arr.shift
   p comp == src
 end
 
